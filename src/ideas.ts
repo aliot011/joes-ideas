@@ -1,6 +1,6 @@
 // src/ideas.ts
 
-export type Stage = "Idea" | "In Process" | "Operational";
+export type Stage = "Idea" | "In Process" | "Operational" | "Inactive";
 
 export type Idea = {
   name: string;
@@ -21,12 +21,12 @@ export const ideas: Idea[] = [
     name: "Metric Mondays",
     description: "Weekly posts breaking down startup metrics in plain English.",
     stage: "Operational",
-    externalUrl: "https://example.com/metric-mondays",
+    externalUrl: "https://www.linkedin.com/company/founderscpa/posts/",
   },
   {
-    name: "Joe's Idea's Site",
+    name: "Joe's Idea",
     description:
-      "This simple text-first page listing my experiments and projects.",
+      "What you're looking at right now - a website that catalogues my projects.",
     stage: "Idea",
   },
   {
@@ -49,15 +49,14 @@ export const ideas: Idea[] = [
   },
   {
     name: "Big Day Bagels",
-    description:
-      "An experiment in small-batch bagels at a local market with rotating flavors.",
+    description: "An experiment in small-batch bagel making with friends.",
     stage: "Idea",
   },
   {
-    name: "VC Midwest Map",
+    name: "MKE Tech Map",
     description:
-      "A map and directory of Midwest VC firms, angels, and startup hubs.",
-    stage: "Operational",
+      "A map and directory of venture capital firms and resources for early-stage companies in and around Milwaukee.",
+    stage: "Inactive",
   },
   {
     name: "Startup Metrics Library",
@@ -74,7 +73,7 @@ export const ideas: Idea[] = [
   {
     name: "Net Worth Tracker",
     description:
-      "A lightweight and tracker for setting near- and long-term savings and net worth goals.",
+      "A lightweight Excel tracker for setting and tracking aginst near- and long-term savings and net worth goals.",
     stage: "Operational",
   },
 ];

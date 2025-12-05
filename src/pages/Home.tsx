@@ -8,6 +8,7 @@ const stageClassMap: Record<Stage, string> = {
   Idea: "pill pill-idea",
   "In Process": "pill pill-in-process",
   Operational: "pill pill-operational",
+  Inactive: "pill pill-inactive",
 };
 
 export function Home() {

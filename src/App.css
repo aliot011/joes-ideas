@@ -154,3 +154,12 @@ a:hover {
   color: #1f6b1f;
   border-color: #1f6b1f;
 }
+
+.pill-inactive {
+  background: #e5e7eb;
+  /* grey background */
+  color: #020617;
+  /* near-black text */
+  border-color: #000000;
+  /* black border */
+}

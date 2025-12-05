@@ -15,7 +15,7 @@ export const ideas: Idea[] = [
     name: "Milwaukee Garbage Alerts",
     description: "A small service that monitors things and sends SMS alerts.",
     stage: "In Process",
-    internalRoute: "/alert-system",
+    // internalRoute: "/alert-system",
   },
   {
     name: "Metric Mondays",
@@ -27,7 +27,8 @@ export const ideas: Idea[] = [
     name: "Joe's Idea",
     description:
       "What you're looking at right now - a website that catalogues my projects.",
-    stage: "Idea",
+    stage: "Operational",
+    externalUrl: "https://joesidea.com",
   },
   {
     name: "Trace Dependents for Google Sheets",
@@ -46,6 +47,7 @@ export const ideas: Idea[] = [
     description:
       "A collection of songs that I consider just barely good enough to show to the public.",
     stage: "Operational",
+    externalUrl: "https://granolajoe.bandcamp.com/",
   },
   {
     name: "Big Day Bagels",

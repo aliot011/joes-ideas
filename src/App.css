@@ -1,38 +1,156 @@
-.App {
-  text-align: center;
+/* src/App.css */
+
+/* Tech-y monospace font stack + Example Domain background (#f0f0f2) */
+:root {
+  font-family: "SF Mono", "Menlo", "Monaco", "Consolas",
+    "Liberation Mono", "Courier New", monospace;
+  line-height: 1.5;
+  background-color: #f0f0f2;
+  color: #111;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Main content block:
+   - Starts lower on the page for a more centered feel */
+.page {
+  max-width: 900px;
+  margin: 0 auto 4rem;
+  padding: 20vh 1.5rem 4rem;
+  /* 20% viewport height from top */
+  text-align: left;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* --- STICKY TITLE BAR --- */
+
+.sticky-title {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background-color: #f0f0f2;
+  padding: 0.5rem 0 0.4rem;
+  /* vertical space around title text */
 }
 
-.App-link {
-  color: #61dafb;
+/* Title text – normal state */
+.sticky-title h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #4a4e69;
+  transition: font-size 0.3s ease, color 5s ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Compact title when scrolled:
+   - slightly larger than table header text
+   - darker grey so it stands out */
+.sticky-title--compact h1 {
+  font-size: 1.5rem;
+  /* font-weight: 800; */
+  color: #1d3557;
+}
+
+/* --- SUBHEADER (scrolls normally) --- */
+
+.page-header {
+  margin-top: 0.6rem;
+  /* small space under title */
+  margin-bottom: 2rem;
+  /* space before the table starts */
+}
+
+.page-header p {
+  margin: 0 0 0.3rem;
+}
+
+/* --- TABLE --- */
+
+.ideas-table {
+  width: 100%;
+  /* IMPORTANT: do NOT use border-collapse so sticky borders behave correctly */
+  /* border-collapse: collapse; */
+  margin-top: 0;
+  /* spacing handled by page-header margin-bottom */
+  font-size: 0.95rem;
+}
+
+/* Sticky table header:
+   - position sticky on thead
+   - "top" is set inline from JS to exactly match the title height */
+.ideas-table thead {
+  position: sticky;
+  z-index: 10;
+  background-color: #f0f0f2;
+}
+
+/* Header cells */
+.ideas-table thead th {
+  padding: 0.4rem 0.2rem;
+  border-bottom: 1px solid #d0d0d0;
+}
+
+/* Body cells */
+.ideas-table th,
+.ideas-table td {
+  padding: 0.4rem 0.2rem;
+  text-align: left;
+  vertical-align: top;
+  border: none;
+}
+
+/* Column widths: Idea / What is it / Stage */
+.ideas-table th:nth-child(1),
+.ideas-table td:nth-child(1) {
+  width: 30%;
+}
+
+.ideas-table th:nth-child(2),
+.ideas-table td:nth-child(2) {
+  width: 55%;
+}
+
+.ideas-table th:nth-child(3),
+.ideas-table td:nth-child(3) {
+  width: 15%;
+}
+
+/* Links */
+a {
+  color: #007aff;
+  text-decoration: underline;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* Stage pills */
+.pill {
+  display: inline-block;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.pill-idea {
+  background-color: #e6f2ff;
+  color: #004999;
+  border-color: #004999;
+}
+
+.pill-in-process {
+  background-color: #fff7e0;
+  color: #d47a00;
+  border-color: #d47a00;
+}
+
+.pill-operational {
+  background-color: #e6f7e6;
+  color: #1f6b1f;
+  border-color: #1f6b1f;
 }

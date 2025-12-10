@@ -92,10 +92,10 @@ export function Home() {
             {ideas.map((idea) => (
               <tr key={idea.name}>
                 <td>
-                  {idea.internalRoute ? (
-                    <Link to={idea.internalRoute}>{idea.name}</Link>
-                  ) : idea.externalUrl ? (
-                    <a href={idea.externalUrl} target="_blank" rel="noreferrer">
+                  {idea.link ? (
+                    <Link to={idea.link}>{idea.name}</Link>
+                  ) : idea.link ? (
+                    <a href={idea.link} target="_blank" rel="noreferrer">
                       {idea.name}
                     </a>
                   ) : (
@@ -113,6 +113,26 @@ export function Home() {
           </tbody>
         </table>
       </main>
+      <footer>
+        <div className="footer-inner">
+          <div className="footer-left">© 2025 JHAI LLC</div>
+          <div className="footer-right">
+            <a href="mailto:you@example.com">Contact</a>
+            <span className="footer-separator">•</span>
+            <a
+              href="https://github.com/your-username/joes-idea"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
+            </a>
+            <span className="footer-separator">•</span>
+            <a href="#">Privacy</a>
+            <span className="footer-separator">•</span>
+            <a href="#">Terms</a>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }

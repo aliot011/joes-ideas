@@ -1,158 +1,225 @@
-/* src/App.css */
-
-/* Tech-y monospace font stack + Example Domain background (#f0f0f2) */
 :root {
-  font-family: "SF Mono", "Menlo", "Monaco", "Consolas",
-    "Liberation Mono", "Courier New", monospace;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Mono",
+    "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New",
+    monospace;
   line-height: 1.5;
-  background-color: #f0f0f2;
-  color: #111;
+  color: #e5e7eb;
+  background-color: #020617;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 body {
-  margin: 0;
+  background-color: #f9fafb;
+  /* was #020617 */
+}
+.app {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Main content block:
-   - Starts lower on the page for a more centered feel */
-.page {
-  max-width: 900px;
-  margin: 0 auto 4rem;
-  padding: 20vh 1.5rem 4rem;
-  /* 20% viewport height from top */
-  text-align: left;
+/* HERO */
+
+.hero {
+  min-height: calc(100vh - 40px);
+  /* full height minus top+bottom margins */
+  margin: 20px 20px 0;
+  /* 20px around the hero (no bottom if you prefer) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  background-color: #020617;
+  /* dark hero background */
+  border-radius: 100rem;
+  /* optional: round the outer hero */
 }
 
-/* --- STICKY TITLE BAR --- */
 
-.sticky-title {
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  background-color: #f0f0f2;
-  padding: 0.5rem 0 0.4rem;
-  /* vertical space around title text */
+@media (max-width: 720px) {
+  .hero {
+    margin: 0;
+    min-height: 100vh;
+    border-radius: 0;
+  }
+
+  /* ...your existing responsive rules... */
 }
 
-/* Title text – normal state */
-.sticky-title h1 {
-  margin: 0;
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: #4a4e69;
-  transition: font-size 0.3s ease, color 5s ease;
-}
 
-/* Compact title when scrolled:
-   - slightly larger than table header text
-   - darker grey so it stands out */
-.sticky-title--compact h1 {
-  font-size: 1.5rem;
-  /* font-weight: 800; */
-  color: #1d3557;
-}
-
-/* --- SUBHEADER (scrolls normally) --- */
-
-.page-header {
-  margin-top: 0.6rem;
-  /* small space under title */
-  margin-bottom: 2rem;
-  /* space before the table starts */
-}
-
-.page-header p {
-  margin: 0 0 0.3rem;
-}
-
-/* --- TABLE --- */
-
-.ideas-table {
+.hero-inner {
+  max-width: 880px;
   width: 100%;
-  /* IMPORTANT: do NOT use border-collapse so sticky borders behave correctly */
-  /* border-collapse: collapse; */
-  margin-top: 0;
-  /* spacing handled by page-header margin-bottom */
-  font-size: 0.95rem;
+  
+
 }
 
-/* Sticky table header:
-   - position sticky on thead
-   - "top" is set inline from JS to exactly match the title height */
-.ideas-table thead {
-  position: sticky;
-  z-index: 10;
-  background-color: #f0f0f2;
+.hero-title {
+  font-size: clamp(5rem, 5vw, 3.25rem);
+  /* letter-spacing: 0.08em; */
+  /* text-transform: uppercase; */
+  margin: 0 0 0.75rem;
+  color: #f9fafb;
 }
 
-/* Header cells */
-.ideas-table thead th {
-  padding: 0.4rem 0.2rem;
-  border-bottom: 1px solid #d0d0d0;
+.hero-subtitle {
+  margin: 0;
+  font-size: 1.5rem;
+  /* max-width: 32rem; */
+  color: #9ca3af;
 }
 
-/* Body cells */
-.ideas-table th,
-.ideas-table td {
-  padding: 0.4rem 0.2rem;
-  text-align: left;
-  vertical-align: top;
-  border: none;
+/* IDEAS SECTION */
+
+.ideas-section {
+  background-color: #f9fafb;
+  color: #020617;
+  padding: 3rem 1.5rem 4rem;
 }
 
-/* Column widths: Idea / What is it / Stage */
-.ideas-table th:nth-child(1),
-.ideas-table td:nth-child(1) {
-  width: 30%;
+.ideas-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
-.ideas-table th:nth-child(2),
-.ideas-table td:nth-child(2) {
-  width: 55%;
+/* Each idea row */
+
+.idea-row {
+  display: grid;
+  grid-template-columns: minmax(0, 220px) minmax(0, 1fr);
+  gap: 1.75rem;
+  align-items: stretch;
 }
 
-.ideas-table th:nth-child(3),
-.ideas-table td:nth-child(3) {
-  width: 15%;
+.idea-tile {
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1.25rem;
+  /* box-shadow: 0 18px 35px rgba(15, 23, 42, 0.25); */
 }
 
-/* Links */
-a {
-  color: #007aff;
-  text-decoration: underline;
+.idea-name {
+  font-size: 1.25rem;
+  font-weight: 800;
+  /* text-transform: uppercase; */
+  /* letter-spacing: 0.12em; */
+  color: #f9fafb;
 }
 
-a:hover {
+/* Right column content */
+
+.idea-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  border: 1px solid #e5e7eb;
+  padding: 1.25rem 1.5rem;
+}
+
+.idea-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.idea-label {
+  /* font-size: 0.75rem; */
+  /* text-transform: uppercase; */
+  /* letter-spacing: 0.16em; */
+  color: #6b7280;
+}
+
+.idea-description {
+  /* font-size: 0.9rem; */
+  color: #111827;
+}
+
+/* Status + Tags row */
+
+.idea-meta-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.idea-meta {
+  display: flex;
+  flex-direction: column;
+  /* gap: 0.35rem; */
+}
+
+.idea-value {
+  font-size: 0.88rem;
+  color: #111827;
+}
+
+.idea-link-row {
+  margin-top: auto;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.idea-link-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.85rem;
+  border-radius: 0.4rem;
+  /* less rounded */
+  border: 1px solid #d1d5db;
+  /* light border */
+  background-color: #e5e7eb;
+  /* light grey */
+  color: #111827;
+  /* dark text */
+  font-size: 0.8rem;
   text-decoration: none;
 }
 
-/* Stage pills */
+.idea-link-button:hover {
+  background-color: #d1d5db;
+  /* slightly darker on hover */
+  border-color: #9ca3af;
+}
+
+.idea-link-button-icon {
+  font-size: 0.8rem;
+  line-height: 1;
+}
+
+/* Pills */
+
 .pill {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   padding: 0.15rem 0.6rem;
   border-radius: 999px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  border: 1px solid transparent;
-  white-space: nowrap;
-}
-
-.pill-idea {
-  background-color: #e6f2ff;
-  color: #004999;
-  border-color: #004999;
-}
-
-.pill-in-process {
-  background-color: #fff7e0;
-  color: #d47a00;
-  border-color: #d47a00;
-}
-
-.pill-operational {
-  background-color: #e6f7e6;
-  color: #1f6b1f;
-  border-color: #1f6b1f;
+  border: 1px solid rgba(22, 163, 74, 0.5);
+  background: rgba(16, 185, 129, 0.1);
+  color: #166534;
+  font-size: 0.7rem;
+  /* text-transform: uppercase; */
+  /* letter-spacing: 0.14em; */
 }
 
 .pill-inactive {
@@ -162,4 +229,87 @@ a:hover {
   /* near-black text */
   border-color: #000000;
   /* black border */
+}
+
+/* Tag pills */
+
+.tag-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.1rem 0.5rem;
+  margin-right: 0.25rem;
+  margin-bottom: 0.25rem;
+  border-radius: 999px;
+  background-color: #f3f4f6;
+  color: #374151;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+/* Links */
+
+a {
+  color: #1d4ed8;
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(37, 99, 235, 0.5);
+}
+
+a:hover {
+  border-bottom-style: solid;
+}
+
+/* FOOTER */
+
+.site-footer {
+  background: #ffffff;
+  border-top: 1px solid #e5e7eb;
+  font-size: 0.8rem;
+  color: #111827;
+}
+
+.footer-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.footer-right {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.footer-right a {
+  color: #4b5563;
+  border-bottom-color: rgba(75, 85, 99, 0.5);
+}
+
+.footer-right a:hover {
+  border-bottom-style: solid;
+}
+
+.footer-separator {
+  color: #d1d5db;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 720px) {
+  .idea-row {
+    grid-template-columns: 1fr;
+  }
+
+  .idea-tile {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .idea-meta-row {
+    grid-template-columns: 1fr;
+  }
 }

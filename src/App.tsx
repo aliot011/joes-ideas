@@ -91,7 +91,7 @@ const App: React.FC = () => {
         <div className="footer-inner">
           <div className="footer-left">© 2025 JHAI LLC</div>
           <div className="footer-right">
-            <a href="mailto:j.aliot011@gmail.com">Contact</a>
+            <a href="mailto:jalioto@joesidea.com">Email</a>
             <span className="footer-separator">•</span>
             <a
               href="https://github.com/aliot011"

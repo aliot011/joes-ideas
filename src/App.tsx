@@ -8,10 +8,9 @@ const App: React.FC = () => {
       {/* HERO / INTRO */}
       <section className="hero">
         <div className="hero-inner">
-          <h1 className="hero-title">Joe&apos;s Idea</h1>
+          <h1 className="hero-title">Hi, I'm Joe.</h1>
           <p className="hero-subtitle">
-            I&apos;m Joe; these are some of my ideas. Reach out if you like any
-            of them.
+            These are some of my ideas. Reach out if you like any of them.
           </p>
         </div>
       </section>

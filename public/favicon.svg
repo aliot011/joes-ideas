@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Circle outline -->
+  <circle
+    cx="32"
+    cy="32"
+    r="28"
+    fill="none"
+    stroke="#f9fafb"
+    stroke-width="3"
+  />
+
+  <!-- Centered, heavy J -->
+  <text
+    x="50%"
+    y="50%"
+    text-anchor="middle"
+    dominant-baseline="middle"
+    font-family="system-ui, -apple-system, BlinkMacSystemFont, 'SF Mono', monospace"
+    font-size="36"
+    font-weight="700"
+    fill="#f9fafb"
+  >
+    J
+  </text>
+</svg>

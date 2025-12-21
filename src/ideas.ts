@@ -48,6 +48,7 @@ export const ideas: Idea[] = [
       "A helper tool for Excel/Sheets to trace formulas and dependencies more clearly.",
     stage: "In Process",
     tags: ["tool", "google-sheets", "productivity"],
+    link: "/trace-dependents",
     color: "#a855f7",
   },
   {

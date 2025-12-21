@@ -1,10 +1,14 @@
 import React from "react";
 import "./App.css";
+import { Link, Navigate, Route, Routes } from "react-router-dom";
 import { ideas } from "./ideas";
+import TraceDependentsPage from "./TraceDependentsPage";
 
-const App: React.FC = () => {
+const isExternalLink = (link: string) => /^https?:\/\//i.test(link);
+
+const IdeaListPage: React.FC = () => {
   return (
-    <div className="app">
+    <>
       {/* HERO / INTRO */}
       <section className="hero">
         <div className="hero-inner">
@@ -69,15 +73,22 @@ const App: React.FC = () => {
                 {/* Row 3: View Idea button (bottom-right, if link exists) */}
                 {idea.link && (
                   <div className="idea-link-row">
-                    <a
-                      href={idea.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="idea-link-button"
-                    >
-                      <span>View idea</span>
-                      <span className="idea-link-button-icon">↗</span>
-                    </a>
+                    {isExternalLink(idea.link) ? (
+                      <a
+                        href={idea.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="idea-link-button"
+                      >
+                        <span>View idea</span>
+                        <span className="idea-link-button-icon">↗</span>
+                      </a>
+                    ) : (
+                      <Link to={idea.link} className="idea-link-button">
+                        <span>View idea</span>
+                        <span className="idea-link-button-icon">→</span>
+                      </Link>
+                    )}
                   </div>
                 )}
               </div>
@@ -85,24 +96,38 @@ const App: React.FC = () => {
           ))}
         </div>
       </main>
+    </>
+  );
+};
 
-      {/* FOOTER */}
-      <footer className="site-footer">
-        <div className="footer-inner">
-          <div className="footer-left">© 2025 JHAI LLC</div>
-          <div className="footer-right">
-            <a href="mailto:jalioto@joesidea.com">Email</a>
-            <span className="footer-separator">•</span>
-            <a
-              href="https://github.com/aliot011"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GitHub
-            </a>
-          </div>
-        </div>
-      </footer>
+const Footer: React.FC = () => (
+  <footer className="site-footer">
+    <div className="footer-inner">
+      <div className="footer-left">© 2025 JHAI LLC</div>
+      <div className="footer-right">
+        <a href="mailto:jalioto@joesidea.com">Email</a>
+        <span className="footer-separator">•</span>
+        <a
+          href="https://github.com/aliot011"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
+        </a>
+      </div>
+    </div>
+  </footer>
+);
+
+const App: React.FC = () => {
+  return (
+    <div className="app">
+      <Routes>
+        <Route path="/" element={<IdeaListPage />} />
+        <Route path="/trace-dependents" element={<TraceDependentsPage />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+      <Footer />
     </div>
   );
 };

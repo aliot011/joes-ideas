@@ -3,6 +3,8 @@ import "./App.css";
 import { Link, Navigate, Route, Routes } from "react-router-dom";
 import { ideas } from "./ideas";
 import TraceDependentsPage from "./TraceDependentsPage";
+import TraceDependentsPrivacyPolicyPage from "./TraceDependentsPrivacyPolicyPage";
+import TraceDependentsTermsPage from "./TraceDependentsTermsPage";
 
 const isExternalLink = (link: string) => /^https?:\/\//i.test(link);
 
@@ -125,6 +127,14 @@ const App: React.FC = () => {
       <Routes>
         <Route path="/" element={<IdeaListPage />} />
         <Route path="/trace-dependents" element={<TraceDependentsPage />} />
+        <Route
+          path="/trace-dependents/privacy-policy"
+          element={<TraceDependentsPrivacyPolicyPage />}
+        />
+        <Route
+          path="/trace-dependents/terms-of-service"
+          element={<TraceDependentsTermsPage />}
+        />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
       <Footer />

@@ -16,12 +16,12 @@ const TraceDependentsPage: React.FC = () => {
             spreadsheet flow.
           </p>
           <div className="page-cta-row">
-            <a className="idea-link-button" href="#privacy-policy">
+            <Link className="idea-link-button" to="/trace-dependents/privacy-policy">
               Privacy policy
-            </a>
-            <a className="idea-link-button" href="#terms-of-service">
+            </Link>
+            <Link className="idea-link-button" to="/trace-dependents/terms-of-service">
               Terms of service
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -52,7 +52,7 @@ const TraceDependentsPage: React.FC = () => {
             </p>
           </div>
 
-          <div className="page-card" id="privacy-policy">
+          <div className="page-card">
             <div className="page-card-header">
               <h2 className="page-card-title">Privacy policy</h2>
               <span className="pill">Draft</span>
@@ -63,9 +63,17 @@ const TraceDependentsPage: React.FC = () => {
               of the session. For any questions or data removal requests, email
               <a href="mailto:jalioto@joesidea.com"> jalioto@joesidea.com</a>.
             </p>
+            <div className="page-cta-row">
+              <Link
+                className="idea-link-button"
+                to="/trace-dependents/privacy-policy"
+              >
+                Read the full privacy policy
+              </Link>
+            </div>
           </div>
 
-          <div className="page-card" id="terms-of-service">
+          <div className="page-card">
             <div className="page-card-header">
               <h2 className="page-card-title">Terms of service</h2>
               <span className="pill">Draft</span>
@@ -77,6 +85,14 @@ const TraceDependentsPage: React.FC = () => {
               are responsible for backups of your spreadsheets and for verifying the
               accuracy of downstream calculations.
             </p>
+            <div className="page-cta-row">
+              <Link
+                className="idea-link-button"
+                to="/trace-dependents/terms-of-service"
+              >
+                Read the full terms of service
+              </Link>
+            </div>
           </div>
 
           <div className="page-card">

@@ -1,10 +1,26 @@
-import React from "react";
+import React, { useCallback, useMemo, useRef } from "react";
 import { Link } from "react-router-dom";
 import { ideas } from "../ideas";
 
 const isExternalLink = (link: string) => /^https?:\/\//i.test(link);
 
 const IdeaListPage: React.FC = () => {
+  const ideaRefs = useRef<Map<string, HTMLElement | null>>(new Map());
+
+  const ideaIds = useMemo(() => ideas.map((idea) => idea.id), []);
+
+  const handleRandomIdea = useCallback(() => {
+    if (!ideaIds.length) return;
+
+    const randomId = ideaIds[Math.floor(Math.random() * ideaIds.length)];
+    const target = ideaRefs.current.get(randomId);
+
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      target.focus({ preventScroll: true });
+    }
+  }, [ideaIds]);
+
   return (
     <>
       <section className="hero">
@@ -13,6 +29,11 @@ const IdeaListPage: React.FC = () => {
           <p className="hero-subtitle">
             These are some of my ideas. Reach out if you like any of them.
           </p>
+          <div className="hero-actions">
+            <button className="hero-button" type="button" onClick={handleRandomIdea}>
+              Jump to random idea
+            </button>
+          </div>
         </div>
       </section>
 
@@ -20,7 +41,14 @@ const IdeaListPage: React.FC = () => {
         <div className="ideas-inner">
           <div className="ideas-grid">
             {ideas.map((idea) => (
-              <article key={idea.id} className="idea-card">
+              <article
+                key={idea.id}
+                className="idea-card"
+                ref={(node) => {
+                  ideaRefs.current.set(idea.id, node);
+                }}
+                tabIndex={-1}
+              >
                 <div className="idea-card-header">
                   <div className="idea-heading">
                     <div className="idea-name-row">
@@ -47,14 +75,6 @@ const IdeaListPage: React.FC = () => {
                           {tag}
                         </span>
                       ))}
-                    </div>
-                  </div>
-                  <div className="idea-meta">
-                    <div className="idea-label">Status</div>
-                    <div className="idea-status-note">
-                      {idea.stage === "Inactive"
-                        ? "Paused for now"
-                        : "Actively exploring"}
                     </div>
                   </div>
                 </div>

@@ -125,7 +125,7 @@ body {
 
 .hero {
   padding: 8rem 1.5rem 6rem;
-  background: #ffffff;
+  background: transparent;
   min-height: 70vh;
 }
 
@@ -138,20 +138,20 @@ body {
   padding: 3.25rem 3.25rem;
   border-radius: 1.5rem;
   padding: 3.25rem 3.25rem;
-  box-shadow: 0 25px 80px rgba(11, 111, 184, 0.1);
-  background: #ffffff;
+  box-shadow: none;
+  background: transparent;
 }
 
 .hero-title {
   font-size: clamp(2.6rem, 5vw, 3.6rem);
   margin: 0;
-  color: var(--text-strong);
+  color: #ffffff;
 }
 
 .hero-subtitle {
   margin: 0;
   font-size: 1.1rem;
-  color: #1f304c;
+  color: #e6f3ff;
   max-width: 40rem;
 }
 

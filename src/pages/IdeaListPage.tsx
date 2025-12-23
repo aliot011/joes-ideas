@@ -9,7 +9,6 @@ const IdeaListPage: React.FC = () => {
     <>
       <section className="hero">
         <div className="hero-inner">
-          <div className="hero-pill">Product studio & experiments</div>
           <h1 className="hero-title">Hi, I'm Joe.</h1>
           <p className="hero-subtitle">
             These are some of my ideas. Reach out if you like any of them.
@@ -23,10 +22,6 @@ const IdeaListPage: React.FC = () => {
             {ideas.map((idea) => (
               <article key={idea.id} className="idea-card">
                 <div className="idea-card-header">
-                  <div
-                    className="idea-avatar"
-                    style={{ backgroundColor: idea.color }}
-                  />
                   <div className="idea-heading">
                     <div className="idea-name-row">
                       <h3 className="idea-name-text">{idea.name}</h3>

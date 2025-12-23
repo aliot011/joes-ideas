@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import { Navigate, Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
+import FloatingCircles from "./components/FloatingCircles";
 import IdeaListPage from "./pages/IdeaListPage";
 import TraceDependentsPage from "./TraceDependentsPage";
 import TraceDependentsPrivacyPolicyPage from "./TraceDependentsPrivacyPolicyPage";
@@ -10,6 +11,7 @@ import TraceDependentsTermsPage from "./TraceDependentsTermsPage";
 const App: React.FC = () => {
   return (
     <div className="app">
+      <FloatingCircles />
       <Routes>
         <Route path="/" element={<IdeaListPage />} />
         <Route path="/trace-dependents" element={<TraceDependentsPage />} />

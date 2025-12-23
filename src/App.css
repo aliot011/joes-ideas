@@ -28,14 +28,10 @@ body,
 }
 
 body {
-  background-color: #b7e8f6;
-  background-image:
-    radial-gradient(circle at 20% 25%, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.6) 26%, transparent 32%),
-    radial-gradient(circle at 80% 60%, rgba(255, 255, 255, 0.48) 0%, rgba(255, 255, 255, 0.48) 24%, transparent 30%),
+  background:
+    radial-gradient(520px at 22% 28%, rgba(255, 255, 255, 0.35), transparent 55%),
+    radial-gradient(520px at 78% 60%, rgba(255, 255, 255, 0.3), transparent 60%),
     linear-gradient(145deg, #b7e8f6 0%, #c9f0fb 60%, #b7e8f6 100%);
-  background-size: 1400px 1400px, 1400px 1400px, auto;
-  background-repeat: repeat;
-  background-attachment: scroll;
 }
 
 .app {
@@ -59,6 +55,8 @@ body {
   gap: 0.75rem;
   padding: 3.25rem 3.25rem;
   border-radius: 1.5rem;
+  padding: 3.25rem 3.25rem;
+  box-shadow: 0 25px 80px rgba(11, 111, 184, 0.1);
 }
 
 .hero-title {

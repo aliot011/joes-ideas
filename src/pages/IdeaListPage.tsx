@@ -49,14 +49,6 @@ const IdeaListPage: React.FC = () => {
                       ))}
                     </div>
                   </div>
-                  <div className="idea-meta">
-                    <div className="idea-label">Status</div>
-                    <div className="idea-status-note">
-                      {idea.stage === "Inactive"
-                        ? "Paused for now"
-                        : "Actively exploring"}
-                    </div>
-                  </div>
                 </div>
 
                 {idea.link && (

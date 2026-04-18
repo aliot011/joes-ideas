@@ -1,5 +1,5 @@
-import { useState, useCallback, useRef } from "react";
-import { ExternalLink, ArrowRight, Shuffle, X, Mail, Github } from "lucide-react";
+import { useState, useRef } from "react";
+import { ExternalLink, ArrowRight, X, Mail, Github } from "lucide-react";
 
 type Status = "Operational" | "In Process" | "Idea" | "Inactive";
 
@@ -113,35 +113,22 @@ const Index = () => {
   const [selectedId, setSelectedId] = useState<number | null>(null);
   const topRef = useRef<HTMLDivElement>(null);
 
-  const jumpToRandom = useCallback(() => {
-    const idx = Math.floor(Math.random() * ideas.length);
-    setSelectedId(idx);
-    topRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-  }, []);
-
   const selected = selectedId !== null ? ideas[selectedId] : null;
 
   return (
-    <main className="min-h-screen px-6 py-16 md:py-24 max-w-3xl">
+    <main className="min-h-screen px-6 py-12 md:py-16 max-w-3xl">
       <div ref={topRef} />
 
-      <header className="mb-16 ml-0 md:ml-12">
-        <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
+      <header className="mb-12">
+        <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-3">
           Hi, I'm Joe.
         </h1>
-        <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+        <p className="text-base text-muted-foreground leading-relaxed">
           These are some of my ideas. Reach out if you like any of them.
         </p>
-        <button
-          onClick={jumpToRandom}
-          className="inline-flex items-center gap-2 text-sm font-mono text-accent hover:underline underline-offset-4 transition-colors"
-        >
-          <Shuffle className="w-3.5 h-3.5" />
-          Jump to random idea
-        </button>
       </header>
 
-      <section className="ml-0 md:ml-12">
+      <section>
         {selected ? (
           /* ── Expanded view ── */
           <div className="animate-in fade-in duration-300">
@@ -250,7 +237,7 @@ const Index = () => {
         )}
       </section>
 
-      <footer className="mt-16 pt-8 border-t border-border ml-0 md:ml-12 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+      <footer className="mt-16 pt-8 border-t border-border flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <p className="text-xs text-muted-foreground font-mono">
           © {new Date().getFullYear()} JHAI LLC
         </p>

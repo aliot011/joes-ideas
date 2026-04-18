@@ -103,8 +103,8 @@ const ideas: Idea[] = [
 ];
 
 const statusColor: Record<Status, string> = {
-  Operational: "text-green-700",
-  "In Process": "text-accent",
+  Operational: "text-emerald-500",
+  "In Process": "text-sky-600",
   Idea: "text-muted-foreground",
   Inactive: "text-muted-foreground/60",
 };
@@ -201,7 +201,7 @@ const Index = () => {
               <li
                 key={i}
                 id={`idea-${i}`}
-                className="py-5 cursor-pointer group"
+                className="py-5 pl-4 -ml-4 cursor-pointer group border-l-2 border-transparent hover:border-foreground transition-colors"
                 onClick={() => {
                   setSelectedId(i);
                   topRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });

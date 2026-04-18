@@ -239,15 +239,6 @@ const Index = () => {
                       {idea.description}
                     </p>
                   </div>
-                  {idea.link && (
-                    <span className="shrink-0 mt-1 text-muted-foreground group-hover:text-foreground transition-colors">
-                      {idea.external ? (
-                        <ExternalLink className="w-4 h-4" />
-                      ) : (
-                        <ArrowRight className="w-4 h-4" />
-                      )}
-                    </span>
-                  )}
                 </div>
               </li>
             ))}

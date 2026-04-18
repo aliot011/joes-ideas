@@ -196,7 +196,7 @@ const Index = () => {
           </div>
         ) : (
           /* ── List view ── */
-          <ul className="space-y-0 divide-y divide-border">
+          <ul className="space-y-1">
             {ideas.map((idea, i) => (
               <li
                 key={i}

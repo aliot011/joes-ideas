@@ -201,7 +201,7 @@ const Index = () => {
               <li
                 key={i}
                 id={`idea-${i}`}
-                className="py-5 cursor-pointer group"
+                className="py-5 pl-4 -ml-4 cursor-pointer group border-l-2 border-transparent hover:border-foreground transition-colors"
                 onClick={() => {
                   setSelectedId(i);
                   topRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });

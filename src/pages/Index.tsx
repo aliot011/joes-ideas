@@ -15,6 +15,15 @@ interface Idea {
 
 const ideas: Idea[] = [
   {
+    name: "Social Listening + Content Creation",
+    status: "In Process",
+    description: "A tool for monitoring social conversations and generating content ideas.",
+    details: "Tracks what people are saying across social platforms and helps turn those signals into content. Built for founders and marketers who want to stay ahead of the conversation.",
+    tags: ["tool", "social", "content", "ai"],
+    link: "https://social-spark-studio.onrender.com/",
+    external: true,
+  },
+  {
     name: "Milwaukee Garbage Alerts",
     status: "In Process",
     description: "A small service that monitors things and sends SMS alerts.",
@@ -78,15 +87,6 @@ const ideas: Idea[] = [
     description: "A map and directory of venture capital firms and resources for early-stage companies in and around Milwaukee.",
     details: "Mapped out the Milwaukee startup ecosystem — VCs, accelerators, coworking spaces. Currently inactive but the data is still useful.",
     tags: ["map", "vc", "milwaukee"],
-  },
-  {
-    name: "Social Listening + Content Creation",
-    status: "Operational",
-    description: "A tool for monitoring social conversations and generating content ideas.",
-    details: "Tracks what people are saying across social platforms and helps turn those signals into content. Built for founders and marketers who want to stay ahead of the conversation.",
-    tags: ["tool", "social", "content", "ai"],
-    link: "https://social-spark-studio.onrender.com/",
-    external: true,
   },
 ];
 

@@ -134,7 +134,7 @@ const Index = () => {
           <div className="animate-in fade-in duration-300">
             <button
               onClick={() => setSelectedId(null)}
-              className="inline-flex items-center gap-1.5 text-xs font-mono text-muted-foreground hover:text-foreground mb-6 transition-colors"
+              className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground mb-6 transition-colors"
             >
               <X className="w-3 h-3" />
               Back to all ideas
@@ -147,7 +147,7 @@ const Index = () => {
                   <h2 className="text-2xl font-bold leading-snug">
                     {selected.name}
                   </h2>
-                  <span className={`text-xs font-mono ${statusColor[selected.status]}`}>
+                  <span className={`text-xs ${statusColor[selected.status]}`}>
                     {selected.status}
                   </span>
                 </div>
@@ -159,7 +159,7 @@ const Index = () => {
                     {selected.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="text-xs font-mono px-2 py-0.5 rounded-sm bg-secondary text-secondary-foreground"
+                        className="text-xs px-2 py-0.5 rounded-sm bg-secondary text-secondary-foreground"
                       >
                         {tag}
                       </span>
@@ -171,7 +171,7 @@ const Index = () => {
                     href={selected.link}
                     target={selected.external ? "_blank" : undefined}
                     rel={selected.external ? "noopener noreferrer" : undefined}
-                    className="inline-flex items-center gap-1.5 text-sm font-mono text-accent hover:underline underline-offset-4"
+                    className="inline-flex items-center gap-1.5 text-sm text-accent hover:underline underline-offset-4"
                   >
                     View project
                     {selected.external ? (
@@ -185,7 +185,7 @@ const Index = () => {
 
               {/* Right: details */}
               <div className="md:w-1/2">
-                <h3 className="text-xs font-mono text-muted-foreground uppercase tracking-widest mb-3">
+                <h3 className="text-xs text-muted-foreground uppercase tracking-widest mb-3">
                   Details
                 </h3>
                 <p className="text-sm leading-relaxed">
@@ -213,7 +213,7 @@ const Index = () => {
                       <h2 className="text-base font-semibold leading-snug group-hover:text-accent transition-colors">
                         {idea.name}
                       </h2>
-                      <span className={`text-xs font-mono ${statusColor[idea.status]}`}>
+                      <span className={`text-xs ${statusColor[idea.status]}`}>
                         {idea.status}
                       </span>
                     </div>
@@ -238,13 +238,13 @@ const Index = () => {
       </section>
 
       <footer className="mt-16 pt-8 border-t border-border flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-        <p className="text-xs text-muted-foreground font-mono">
+        <p className="text-xs text-muted-foreground">
           © {new Date().getFullYear()} JHAI LLC
         </p>
         <div className="flex items-center gap-5">
           <a
             href="mailto:joe@joesidea.com"
-            className="inline-flex items-center gap-1.5 text-xs font-mono text-muted-foreground hover:text-foreground transition-colors"
+            className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors"
           >
             <Mail className="w-3.5 h-3.5" />
             joe@joesidea.com
@@ -253,7 +253,7 @@ const Index = () => {
             href="https://github.com/aliot011"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-xs font-mono text-muted-foreground hover:text-foreground transition-colors"
+            className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors"
           >
             <Github className="w-3.5 h-3.5" />
             @aliot011

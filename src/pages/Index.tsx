@@ -210,7 +210,7 @@ const Index = () => {
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-3 mb-1">
-                      <h2 className="text-base font-semibold leading-snug group-hover:text-accent transition-colors">
+                      <h2 className="text-base font-semibold leading-snug group-hover:text-sky-600 transition-colors">
                         {idea.name}
                       </h2>
                       <span className={`text-xs ${statusColor[idea.status]}`}>

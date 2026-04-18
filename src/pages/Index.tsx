@@ -103,8 +103,8 @@ const ideas: Idea[] = [
 ];
 
 const statusColor: Record<Status, string> = {
-  Operational: "text-green-700",
-  "In Process": "text-accent",
+  Operational: "text-emerald-500",
+  "In Process": "text-sky-600",
   Idea: "text-muted-foreground",
   Inactive: "text-muted-foreground/60",
 };

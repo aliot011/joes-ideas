@@ -123,9 +123,27 @@ const Index = () => {
         <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-3">
           Hi, I'm Joe.
         </h1>
-        <p className="text-base text-muted-foreground leading-relaxed">
+        <p className="text-base text-muted-foreground leading-relaxed mb-3">
           These are some of my ideas. Reach out if you like any of them.
         </p>
+        <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+          <a
+            href="mailto:joe@joesidea.com"
+            className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-sky-600 transition-colors"
+          >
+            <Mail className="w-3.5 h-3.5" />
+            joe@joesidea.com
+          </a>
+          <a
+            href="https://github.com/aliot011"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-sky-600 transition-colors"
+          >
+            <Github className="w-3.5 h-3.5" />
+            @aliot011
+          </a>
+        </div>
       </header>
 
       <section>

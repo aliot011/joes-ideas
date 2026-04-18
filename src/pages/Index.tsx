@@ -80,25 +80,13 @@ const ideas: Idea[] = [
     tags: ["map", "vc", "milwaukee"],
   },
   {
-    name: "Startup Metrics Library",
+    name: "Social Listening + Content Creation",
     status: "Operational",
-    description: "A reference library of key metrics, definitions, and formulas for early-stage companies.",
-    details: "A growing reference of the metrics that matter most for early-stage startups, with clear definitions, formulas, and benchmarks.",
-    tags: ["library", "saas", "metrics"],
-  },
-  {
-    name: "Real Estate Duplex Model",
-    status: "Operational",
-    description: "A spreadsheet and walkthrough for underwriting small duplex purchases.",
-    details: "A practical Excel model for evaluating small residential investment properties. Includes cash flow projections, cap rate calculations, and scenario analysis.",
-    tags: ["real-estate", "excel", "model"],
-  },
-  {
-    name: "Net Worth Tracker",
-    status: "Operational",
-    description: "A lightweight Excel tracker for setting and tracking against near- and long-term savings and net worth goals.",
-    details: "Simple but effective. Track assets, liabilities, and savings goals over time. No app needed — just a well-structured spreadsheet.",
-    tags: ["personal-finance", "excel", "tracker"],
+    description: "A tool for monitoring social conversations and generating content ideas.",
+    details: "Tracks what people are saying across social platforms and helps turn those signals into content. Built for founders and marketers who want to stay ahead of the conversation.",
+    tags: ["tool", "social", "content", "ai"],
+    link: "https://social-spark-studio.onrender.com/",
+    external: true,
   },
 ];
 

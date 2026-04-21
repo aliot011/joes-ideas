@@ -1,0 +1,106 @@
+export type Status = "Operational" | "In Process" | "Idea" | "Inactive";
+
+export interface Idea {
+  name: string;
+  slug: string;
+  status: Status;
+  description: string;
+  details?: string;
+  tags?: string[];
+  link?: string;
+  external?: boolean;
+}
+
+export const ideas: Idea[] = [
+  {
+    name: "Milwaukee Garbage Alerts",
+    slug: "milwaukee-garbage-alerts",
+    status: "Operational",
+    description: "A small service that monitors things and sends SMS alerts.",
+    details: "Built to solve the annoyance of forgetting trash day. Monitors the city schedule and sends timely SMS reminders so you never miss a pickup again.",
+    tags: ["tool", "sms", "milwaukee"],
+    link: "https://milwaukee-garbage-alert-web.onrender.com/",
+    external: true,
+  },
+  {
+    name: "Pagerr",
+    slug: "pagerr",
+    status: "In Process",
+    description: "Connecting anesthesia professionals with the facilities that need them.",
+    details: "A marketplace for anesthesia staffing — matching CRNAs and anesthesiologists with hospitals, surgery centers, and clinics. Built to reduce the friction in a hiring process that still runs largely on phone calls and fax machines.",
+    tags: ["marketplace", "healthcare", "staffing"],
+    link: "https://pagerr.app/",
+    external: true,
+  },
+  {
+    name: "Democrazy",
+    slug: "democrazy",
+    status: "In Process",
+    description: "Put your money where your vote is — a platform that turns civic opinions into real financial action.",
+    details: "Democrazy lets people back their beliefs with actual dollars. Instead of just casting a vote, you allocate money to the causes, candidates, or policies you care about. Compete against others to see whose picks gain the most traction — making civic engagement feel less like a chore and more like a game.",
+    tags: ["web", "civics", "experiment"],
+    link: "https://civic-pulse-xljn.onrender.com/",
+    external: true,
+  },
+  {
+    name: "Social Listening + Content Creation",
+    slug: "social-listening",
+    status: "In Process",
+    description: "A tool for monitoring social conversations and generating content ideas.",
+    details: "Tracks what people are saying across social platforms and helps turn those signals into content. Built for founders and marketers who want to stay ahead of the conversation.",
+    tags: ["tool", "social", "content", "ai"],
+    link: "https://social-spark-studio.onrender.com/",
+    external: true,
+  },
+  {
+    name: "MKE Tech Map",
+    slug: "mke-tech-map",
+    status: "Inactive",
+    description: "A map and directory of venture capital firms and resources for early-stage companies in and around Milwaukee.",
+    details: "Mapped out the Milwaukee startup ecosystem — VCs, accelerators, coworking spaces. Currently inactive but the data is still useful.",
+    tags: ["map", "vc", "milwaukee"],
+  },
+  {
+    name: "Trace Dependents for Google Sheets",
+    slug: "trace-dependents",
+    status: "In Process",
+    description: "A helper tool for Excel/Sheets to trace formulas and dependencies more clearly.",
+    details: "If you've ever tried to audit a complex spreadsheet, you know the pain. This tool visualizes formula dependencies so you can actually understand what's going on.",
+    tags: ["tool", "google-sheets", "productivity"],
+  },
+  {
+    name: "Metric Mondays",
+    slug: "metric-mondays",
+    status: "Operational",
+    description: "Weekly posts breaking down startup metrics in plain English.",
+    details: "A recurring LinkedIn series that takes complex SaaS and startup metrics — CAC, LTV, churn, burn — and explains them with clarity and real examples.",
+    tags: ["content", "saas", "metrics"],
+    link: "https://www.linkedin.com/company/founderscpa/posts/",
+    external: true,
+  },
+  {
+    name: "Granola Joe",
+    slug: "granola-joe",
+    status: "Operational",
+    description: "A collection of songs that I consider just barely good enough to show to the public.",
+    details: "Music I've recorded over the years. Lo-fi, honest, and intentionally imperfect. Available on Bandcamp.",
+    tags: ["music", "personal", "creative"],
+    link: "https://granolajoe.bandcamp.com/",
+    external: true,
+  },
+  {
+    name: "Big Day Bagels",
+    slug: "big-day-bagels",
+    status: "Idea",
+    description: "An experiment in small-batch bagel making with friends.",
+    details: "The idea: gather friends, make bagels, see if the process is as fun as the product. Still in the planning phase.",
+    tags: ["food", "experiment", "milwaukee"],
+  },
+];
+
+export const statusColor: Record<Status, string> = {
+  Operational: "text-emerald-500",
+  "In Process": "text-sky-600",
+  Idea: "text-muted-foreground",
+  Inactive: "text-muted-foreground/60",
+};

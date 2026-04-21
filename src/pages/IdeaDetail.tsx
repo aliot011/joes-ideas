@@ -31,9 +31,8 @@ const IdeaDetail = () => {
         Back to all ideas
       </Link>
 
-      <div className="flex flex-row gap-16">
-        {/* Left: title & meta */}
-        <div className="w-1/2 shrink-0">
+      <div>
+        <div className="w-full">
           <span className={`text-xs ${statusColor[idea.status]}`}>
             {idea.status}
           </span>
@@ -41,18 +40,17 @@ const IdeaDetail = () => {
           <p className="text-sm text-muted-foreground leading-relaxed mb-4">
             {idea.description}
           </p>
-          {idea.tags && (
-            <div className="flex flex-wrap gap-2 mb-4">
-              {idea.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="text-xs px-2 py-0.5 rounded-sm bg-secondary text-secondary-foreground"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          )}
+          <div className="flex flex-col gap-1 mb-4">
+            <p className="text-xs text-muted-foreground">
+              <span className="font-medium text-foreground">Type:</span> {idea.type}
+            </p>
+            <p className="text-xs text-muted-foreground">
+              <span className="font-medium text-foreground">Industry:</span> {idea.industry}
+            </p>
+            <p className="text-xs text-muted-foreground">
+              <span className="font-medium text-foreground">Format:</span> {idea.format}
+            </p>
+          </div>
           {idea.link && (
             <a
               href={idea.link}

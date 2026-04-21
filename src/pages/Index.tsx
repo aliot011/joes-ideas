@@ -32,13 +32,13 @@ const Index = () => {
         </div>
       </header>
 
-      <section>
-        <ul className="space-y-1">
+      <section className="w-full">
+        <ul className="space-y-1 w-full">
           {ideas.map((idea, i) => (
             <li key={i}>
               <Link
                 to={`/idea/${idea.slug}`}
-                className="block py-5 pl-4 -ml-4 group border-l-2 border-transparent hover:border-foreground transition-colors"
+                className="block py-5 pl-4 -ml-4 pr-0 w-[calc(100%+1rem)] group border-l-2 border-transparent hover:border-foreground transition-colors"
               >
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex-1 min-w-0">
@@ -46,10 +46,13 @@ const Index = () => {
                       <h2 className="text-base font-semibold leading-snug group-hover:text-sky-600 transition-colors">
                         {idea.name}
                       </h2>
-                      <span className={`text-xs ${statusColor[idea.status]}`}>
+                      <span className={`hidden sm:inline text-xs ${statusColor[idea.status]}`}>
                         {idea.status}
                       </span>
                     </div>
+                    <span className={`sm:hidden text-xs ${statusColor[idea.status]} mb-1 block`}>
+                      {idea.status}
+                    </span>
                     <p className="text-sm text-muted-foreground leading-relaxed">
                       {idea.description}
                     </p>

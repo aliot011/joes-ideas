@@ -1,6 +1,6 @@
 export type Status = "Operational" | "In Process" | "Idea" | "Inactive";
 export type IdeaType = "Business" | "Side Project" | "Just for Fun" | "TBD";
-export type Industry = "Healthcare" | "Civics" | "Finance" | "Music" | "Food" | "Tech" | "Content" | "N/A";
+export type Industry = "Healthcare" | "Civics" | "Finance" | "Music" | "Food" | "Tech" | "Content" | "Travel" | "N/A";
 export type Format = "Web App" | "Newsletter" | "Tool" | "Marketplace" | "Physical" | "Content";
 
 export interface Idea {
@@ -108,6 +108,16 @@ export const ideas: Idea[] = [
     format: "Content",
     link: "https://granolajoe.bandcamp.com/",
     external: true,
+  },
+  {
+    name: "Multi-Origin Flight Planner",
+    slug: "multi-origin-flight-planner",
+    status: "Idea",
+    description: "A web platform for planning trips when your group is flying in from different cities.",
+    details: "Planning a group trip is hard when everyone is coming from a different city. Multi-Origin Flight Planner solves two problems: (1) destination discovery — enter everyone's home airports and find destinations where flights are affordable and convenient for the whole group; (2) coordination — if you already know where you're going, easily find and compare flights that land around the same time so no one is stranded at the airport waiting for hours. Think of it as a smarter starting point than everyone individually searching Google Flights.",
+    type: "Business",
+    industry: "Travel",
+    format: "Web App",
   },
   {
     name: "Big Day Bagels",
